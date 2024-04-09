@@ -17,7 +17,6 @@ export class GetPetUseCase {
   }: IGetPetUseCaseRequest): Promise<IGetPetUseCaseResponse> {
     const pet = await this.petsRepository.getById(petId);
 
-    console.log(pet);
     if (!pet) {
       throw new NotFoundPetError();
     }
